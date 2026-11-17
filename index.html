@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Coco's Bakery — pastelería de fantasía, hecha con cariño." />
+    <title>Coco's Bakery · Pastelería de fantasía</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Mono:wght@400;500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Coco's Bakery, inicio">
+          <span class="brand-mini">C</span>
+          <span>Coco's Bakery</span>
+        </a>
+        <button class="menu-button" aria-expanded="false" aria-controls="main-nav">Menú <span>✦</span></button>
+        <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+          <a class="active" href="index.html">Inicio</a>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="#historia">Nuestra historia</a>
+          <a href="#redes">Redes</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">♥ Pastelería artesanal ♥</p>
+            <h1 id="hero-title">Un poquito de magia<br /><em>en cada mordida.</em></h1>
+            <p class="hero-text">Galletas, tortas y dulces hechos con mucho amor, detalles y una pizca de fantasía.</p>
+            <div class="hero-actions">
+              <a class="button button-dark" href="catalogo.html">Ver el catálogo <span>→</span></a>
+              <a class="text-link" href="#historia">Conocé a Coco <span>↘</span></a>
+            </div>
+          </div>
+          <div class="hero-art" aria-label="Ilustración de Coco's Bakery">
+            <span class="spark spark-one">✦</span><span class="spark spark-two">✦</span><span class="spark spark-three">♥</span>
+            <div class="lace-ring"></div>
+            <div class="hero-logo-wrap"><img src="assets/cocos-bakery-mark.jpg" alt="Gatito de chocolate, galletas y moño rosa de Coco's Bakery" /></div>
+            <div class="ribbon ribbon-left"></div><div class="ribbon ribbon-right"></div>
+            <p class="art-note">horneado con<br />corazón</p>
+          </div>
+        </section>
+
+        <section class="marquee" aria-label="Especialidades">
+          <span>Galletitas decoradas</span><i>✦</i><span>Tortas soñadas</span><i>✦</i><span>Sweet tables</span><i>✦</i><span>Pedidos especiales</span><i>✦</i>
+        </section>
+
+        <section class="featured section-pad" aria-labelledby="featured-title">
+          <div class="section-heading">
+            <div><p class="eyebrow">Recién salido del horno</p><h2 id="featured-title">Pequeños favoritos</h2></div>
+            <a class="text-link" href="catalogo.html">Ver todo <span>→</span></a>
+          </div>
+          <div class="treat-grid">
+            <article class="treat-card pink-card"><div class="treat-art cookie-art">♡</div><p class="card-kind">Galletitas</p><h3>Corazones de azúcar</h3><p>Suaves, decoradas y listas para regalar.</p></article>
+            <article class="treat-card cream-card"><div class="treat-art cake-art"><span></span></div><p class="card-kind">Tortas</p><h3>Cake de ensueño</h3><p>Capas, flores y detalles que cuentan una historia.</p></article>
+            <article class="treat-card brown-card"><div class="treat-art brownie-art">✦</div><p class="card-kind">Dulces</p><h3>Cuadraditos de cacao</h3><p>Mucho chocolate, centro húmedo y amor.</p></article>
+          </div>
+        </section>
+
+        <section id="historia" class="story section-pad">
+          <div class="story-ornament"><span>✦</span><span>♥</span><span>✦</span></div>
+          <div class="story-copy"><p class="eyebrow">Un mundo dulce</p><h2>Hecho para celebrar<br /><em>lo que te hace feliz.</em></h2><p>En Coco's Bakery pensamos que lo rico también puede ser memorable. Cada pedido nace para acompañar un momento lindo: una merienda, un regalo, un cumple o una excusa para mimarte.</p><a class="button button-pink" href="catalogo.html">Elegí tu favorito <span>→</span></a></div>
+          <div class="story-stamp"><span>COCO'S</span><strong>♡</strong><span>BAKERY</span><small>hecho a mano</small></div>
+        </section>
+
+        <section id="redes" class="social section-pad" aria-labelledby="social-title">
+          <p class="eyebrow">Seguinos por ahí</p><h2 id="social-title">El rinconcito de Coco</h2><p>Próximamente vas a poder encontrarnos en redes para ver cada creación y las novedades del día.</p>
+          <div class="social-links"><a href="#" aria-label="Instagram próximamente">Instagram <span>↗</span></a><a href="#" aria-label="TikTok próximamente">TikTok <span>↗</span></a></div>
+        </section>
+      </main>
+
+      <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mini">C</span><span>Coco's Bakery</span></a><p>Pastelería hecha con amor · <span>2026</span></p><p class="footer-heart">♥</p></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
