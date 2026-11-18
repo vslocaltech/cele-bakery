@@ -1,10 +1,142 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex,nofollow" />
-    <title>Administración · Coco's Bakery</title><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=DM+Mono:wght@400;500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" /><link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Administración · Coco's Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="admin-body"><main class="admin-login" id="admin-login"><img src="https://raw.githubusercontent.com/vslocaltech/cocos-bakery/main/assets/cocos-bakery-mark.jpg" alt="" /><p class="eyebrow">Área privada</p><h1>Hola, Coco ♡</h1><p>Ingresá tu clave para editar la carta.</p><form id="login-form"><label for="admin-key">Clave</label><input id="admin-key" type="password" autocomplete="current-password" required /><button class="button button-dark" type="submit">Entrar <span>→</span></button><p class="form-message" role="status"></p></form><a class="text-link" href="index.html">Volver al sitio <span>↗</span></a></main>
-    <main class="admin-panel hidden" id="admin-panel"><header class="admin-header"><a class="brand" href="index.html"><span class="brand-mini">C</span><span>Coco's Bakery</span></a><button class="logout" id="logout" type="button">Cerrar sesión</button></header><section class="admin-content"><p class="eyebrow">Panel de administración</p><h1>Tu carta, a tu manera.</h1><p class="admin-intro">Esta primera versión guarda los cambios en este navegador. Cuando el sitio tenga servidor, se conecta a una base de datos para que se vean en todos los dispositivos.</p><div class="admin-grid"><form class="product-form" id="product-form"><h2>Agregar producto</h2><label>Nombre<input name="name" required placeholder="Ej. Torta de cumpleaños" /></label><label>Categoría<select name="category"><option>Galletitas</option><option>Tortas</option><option>Dulces</option></select></label><label>Descripción<textarea name="description" required placeholder="Una breve descripción"></textarea></label><button class="button button-pink" type="submit">Guardar producto <span>+</span></button></form><section class="admin-products"><h2>Productos nuevos</h2><div id="admin-product-list"><p class="empty-state">Todavía no agregaste productos desde este panel.</p></div></section></div></section></main><script src="script.js"></script></body>
+  <body class="admin-body">
+
+    <!-- PANTALLA DE INGRESO (LOGIN) -->
+    <main class="admin-login-wrap" id="admin-login">
+      <div class="admin-login-card">
+        <img class="admin-login-avatar" src="https://raw.githubusercontent.com/vslocaltech/cocos-bakery/main/assets/cocos-bakery-mark.jpg" alt="Logo de Coco's Bakery" />
+        <span class="eyebrow">Área Privada</span>
+        <h1>Hola, Coco ♡</h1>
+        <p style="color: var(--choco-soft); font-size: 15px; margin-bottom: 24px;">Ingresá tu clave mágica para editar la carta de delicias.</p>
+        
+        <form id="login-form">
+          <div class="form-group">
+            <label for="admin-key">Clave de acceso</label>
+            <input id="admin-key" class="form-control" type="password" autocomplete="current-password" placeholder="Tu contraseña..." required />
+          </div>
+          <button class="button button-pink" type="submit" style="width: 100%;">
+            Entrar al rincón dulce <span>✨</span>
+          </button>
+          <p class="form-message" role="status"></p>
+        </form>
+
+        <div style="margin-top: 25px;">
+          <a class="text-link" href="index.html">← Volver al sitio principal</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- PANEL DE ADMINISTRACIÓN (DASHBOARD) -->
+    <main class="admin-panel hidden" id="admin-panel">
+      <!-- Barra superior -->
+      <header class="admin-navbar">
+        <a class="brand" href="index.html">
+          <span class="brand-mini">C</span>
+          <span>Coco's Bakery</span>
+        </a>
+        <div class="admin-nav-actions">
+          <a href="catalogo.html" class="button button-secondary" style="padding: 8px 18px; font-size: 13px;">
+            Ver catálogo <span>↗</span>
+          </a>
+          <button class="button button-dark" id="logout" type="button" style="padding: 8px 18px; font-size: 13px;">
+            Cerrar sesión
+          </button>
+        </div>
+      </header>
+
+      <!-- Contenedor del panel -->
+      <div class="admin-container">
+        <div style="margin-bottom: 35px;">
+          <span class="eyebrow">Monerías de Café · Panel de Gestión</span>
+          <h1>Tu carta, a tu manera ✨</h1>
+          <p style="color: var(--choco-soft); max-width: 680px; font-size: 16px;">
+            Podés agregar nuevos dulces, cambiar sus fotos, actualizar sus precios o editarlos cuando quieras. Los cambios se reflejarán instantáneamente en la tienda.
+          </p>
+        </div>
+
+        <div class="admin-grid-layout">
+          <!-- Formulario Agregar / Editar Producto -->
+          <section class="admin-panel-card">
+            <h2 id="form-title">Agregar Nuevo Dulce 🧁</h2>
+            <p class="subtitle">Completá los detalles para publicar en el catálogo.</p>
+
+            <form id="product-form">
+              <input type="hidden" id="edit-index" value="-1" />
+
+              <div class="form-group">
+                <label for="prod-name">Nombre del producto</label>
+                <input id="prod-name" name="name" class="form-control" required placeholder="Ej. Tarta de Frutillas Vintage" />
+              </div>
+
+              <div class="form-group">
+                <label for="prod-category">Categoría</label>
+                <select id="prod-category" name="category" class="form-control">
+                  <option value="Tortas">Tortas</option>
+                  <option value="Galletitas">Galletitas</option>
+                  <option value="Dulces">Dulces</option>
+                  <option value="Especiales">Especiales</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="prod-price">Precio referencial</label>
+                <input id="prod-price" name="price" class="form-control" placeholder="Ej. $4.500 o Consultar" />
+              </div>
+
+              <div class="form-group">
+                <label for="prod-desc">Descripción</label>
+                <textarea id="prod-desc" name="description" class="form-control" rows="3" required placeholder="Detalles, sabores e ingredientes con encanto..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Foto del producto</label>
+                <div style="display: grid; gap: 8px;">
+                  <input type="file" id="product-image-file" class="form-control" accept="image/*" style="font-size: 13px;" />
+                  <input type="url" id="product-image-url" class="form-control" placeholder="O pega un enlace de imagen (https://...)" />
+                </div>
+                <!-- Vista previa de imagen -->
+                <div class="image-preview-box">
+                  <span id="preview-placeholder" class="image-preview-placeholder">
+                    ✨ Vista previa de la foto aquí
+                  </span>
+                  <img id="preview-image" class="hidden" alt="Vista previa del dulce" />
+                </div>
+              </div>
+
+              <div style="display: grid; gap: 10px; margin-top: 25px;">
+                <button id="submit-btn" class="button button-pink" type="submit" style="width: 100%;">
+                  Guardar en la carta <span>+</span>
+                </button>
+                <button id="cancel-btn" class="button button-secondary hidden" type="button" style="width: 100%;">
+                  Cancelar edición
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Listado de Productos Existentes -->
+          <section class="admin-panel-card">
+            <h2>Dulces en la Carta 🎀</h2>
+            <p class="subtitle">Lista en vivo de los productos disponibles en tu web.</p>
+            <div id="admin-product-list" class="admin-products-list">
+              <!-- Renderizado dinámicamente con script.js -->
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>

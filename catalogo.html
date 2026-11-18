@@ -1,30 +1,86 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Catálogo de dulces de Coco's Bakery." /><title>Catálogo · Coco's Bakery</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Mono:wght@400;500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Catálogo de dulces de Coco's Bakery — estilo Monerías de Café." />
+    <title>Catálogo de Ensueño · Coco's Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="site-shell">
-      <header class="site-header"><a class="brand" href="index.html"><span class="brand-mini">C</span><span>Coco's Bakery</span></a><button class="menu-button" aria-expanded="false" aria-controls="main-nav">Menú <span>✦</span></button><nav id="main-nav" class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a class="active" href="catalogo.html">Catálogo</a><a href="index.html#historia">Nuestra historia</a><a href="index.html#redes">Redes</a></nav></header>
+      <!-- HEADER -->
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Coco's Bakery, inicio">
+          <span class="brand-mini">C</span>
+          <span>Coco's Bakery</span>
+        </a>
+        <button class="menu-button" aria-expanded="false" aria-controls="main-nav">Menú <span>✦</span></button>
+        <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+          <a href="index.html">Inicio</a>
+          <a class="active" href="catalogo.html">Catálogo</a>
+          <a href="index.html#historia">Nuestra historia</a>
+          <a href="index.html#redes">Redes</a>
+          <a href="https://wa.me/?text=Hola%20Coco's%20Bakery!%20Quisiera%20hacer%20un%20pedido%20especial" target="_blank" rel="noopener noreferrer" class="nav-cta">
+            Pedir ahora <span>♥</span>
+          </a>
+        </nav>
+      </header>
+
       <main>
-        <section class="catalogue-hero"><p class="eyebrow">Carta de dulzuras</p><h1>El <em>catálogo</em><br />de Coco</h1><p>Una selección para inspirarte. Cada pedido se adapta a tu celebración.</p><div class="catalogue-seal">♡<small>hecho con amor</small></div></section>
-        <section class="catalogue section-pad" aria-labelledby="catalogue-title"><h2 id="catalogue-title" class="visually-hidden">Productos del catálogo</h2><div class="filters" role="group" aria-label="Filtrar productos"><button class="filter active" data-filter="all">Todo</button><button class="filter" data-filter="galletitas">Galletitas</button><button class="filter" data-filter="tortas">Tortas</button><button class="filter" data-filter="dulces">Dulces</button></div>
-          <div class="catalogue-grid">
-            <article class="product-card" data-category="galletitas"><div class="product-visual cookie-visual"><span>♡</span></div><div><p class="card-kind">Galletitas</p><h3>Corazones de azúcar</h3><p>Para regalar, decorar una mesa o endulzar una tarde.</p><span class="price">Consultar</span></div></article>
-            <article class="product-card" data-category="tortas"><div class="product-visual strawberry-visual"><span>✦</span></div><div><p class="card-kind">Tortas</p><h3>Torta de frutilla</h3><p>Suave, romántica y con terminaciones a elección.</p><span class="price">Consultar</span></div></article>
-            <article class="product-card" data-category="dulces"><div class="product-visual choco-visual"><span>✦</span></div><div><p class="card-kind">Dulces</p><h3>Brownie de cacao</h3><p>Intenso, húmedo y con una capa crocante arriba.</p><span class="price">Consultar</span></div></article>
-            <article class="product-card" data-category="galletitas"><div class="product-visual bow-visual"><span>♡</span></div><div><p class="card-kind">Galletitas</p><h3>Galletas personalizadas</h3><p>Colores, iniciales y detalles para tu momento especial.</p><span class="price">Consultar</span></div></article>
-            <article class="product-card" data-category="tortas"><div class="product-visual vintage-visual"><span>♥</span></div><div><p class="card-kind">Tortas</p><h3>Cake vintage</h3><p>Con bordes de crema, moños y mucha personalidad.</p><span class="price">Consultar</span></div></article>
-            <article class="product-card" data-category="dulces"><div class="product-visual mini-visual"><span>♡</span></div><div><p class="card-kind">Dulces</p><h3>Mini dulces</h3><p>Ideales para una mesa dulce que se recuerde.</p><span class="price">Consultar</span></div></article>
+        <!-- HERO DEL CATÁLOGO -->
+        <section class="catalogue-hero">
+          <span class="eyebrow">Carta de Dulzuras</span>
+          <h1>El <em>Catálogo</em> de Ensueño</h1>
+          <p>
+            Una selección inspirada en las Monerías de Café: galletitas decoradas, tortas vintage y bocados mágicos para celebrar la vida.
+          </p>
+        </section>
+
+        <!-- SECCIÓN DE PRODUCTOS CON FILTROS DINÁMICOS -->
+        <section class="section-pad" style="padding-top: 20px;">
+          <!-- Barra de filtros -->
+          <div class="filter-bar" role="group" aria-label="Filtrar productos por categoría">
+            <button class="filter-btn active" data-filter="all">Todo el menú ✦</button>
+            <button class="filter-btn" data-filter="tortas">Tortas 🎂</button>
+            <button class="filter-btn" data-filter="galletitas">Galletitas 🍪</button>
+            <button class="filter-btn" data-filter="dulces">Dulces 🧁</button>
+            <button class="filter-btn" data-filter="especiales">Especiales ✨</button>
+          </div>
+
+          <!-- Grilla de productos renderizada dinámicamente -->
+          <div class="catalogue-grid" id="catalogue-grid">
+            <!-- Renderizado dinámicamente con script.js -->
+          </div>
+
+          <!-- Caja de pedido a medida -->
+          <div class="custom-order-box">
+            <div class="custom-order-copy">
+              <h2>¿Tenés una celebración única?</h2>
+              <p>Hacemos tortas temáticas, mesas de té de fantasía y pedidos personalizados con amor y detalles de oro comestible.</p>
+            </div>
+            <a href="https://wa.me/?text=Hola%20Coco's%20Bakery!%20Tengo%20una%20idea%20para%20un%20pedido%20personalizado" target="_blank" rel="noopener noreferrer" class="button button-pink">
+              Consultar por WhatsApp <span>→</span>
+            </a>
           </div>
         </section>
-        <section class="catalogue-note"><div><p class="eyebrow">¿Tenés una idea?</p><h2>La hacemos dulce.</h2></div><p>Escribinos cuando estén listos los medios de contacto y coordinamos cada detalle de tu pedido especial.</p></section>
       </main>
-      <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mini">C</span><span>Coco's Bakery</span></a><p>Pastelería hecha con amor · <span>2026</span></p><p class="footer-heart">♥</p></footer>
-    </div><script src="script.js"></script>
+
+      <!-- FOOTER CON CORAZÓN SECRETO DE ADMIN -->
+      <footer class="site-footer">
+        <a class="brand" href="index.html">
+          <span class="brand-mini">C</span>
+          <span>Coco's Bakery</span>
+        </a>
+        <p>Pastelería de fantasía · Monerías de Café · <span>2026</span></p>
+        <!-- Corazón secreto que lleva al panel de administración oculto -->
+        <a href="admin.html" class="footer-secret-heart" title="Área privada de Coco">♥</a>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
